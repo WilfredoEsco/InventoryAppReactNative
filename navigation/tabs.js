@@ -10,8 +10,9 @@ const Tab = createBottomTabNavigator();
 const Tabs =() => {
 return(
     <Tab.Navigator
-    tabBarOptions={{
-        showLabel: false,
+    screenOptions={{
+        tabBarshowLabel: false,
+        tabBarStyle:[{didplay:"flex"},null],
         style: {
             position: 'absolute',
             bottom:25,
@@ -20,8 +21,7 @@ return(
             elevation: 0,
             backgroundColor: '#fffff',
             borderRadius: 15,
-            height: 90,
-            ...style.shadow
+            height: 90
 
         }
     }}>
@@ -86,8 +86,8 @@ const style = StyleSheet.create({
             width: 0,
             height: 10,
         },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.5,
+        shadowOpacity: 0.20,
+        shadowRadius: 3.0,
         elevation: 5
     }
 });

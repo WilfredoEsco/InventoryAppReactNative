@@ -4,7 +4,7 @@ import {View, Text, Button, StyleSheet} from 'react-native';
 const CarInfoScreen = ({navigation}) => {
     return(
         <View style = {StyleSheet.container}>
-            <Text>Car Info</Text>
+            <Text>Search Car Info</Text>
 
         </View>
     )

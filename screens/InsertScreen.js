@@ -4,7 +4,7 @@ import {View, Text, Button, StyleSheet} from 'react-native';
 const InsertScreen = ({navigation}) => {
     return(
         <View style = {StyleSheet.container}>
-            <Text>Insert Screen</Text>
+            <Text>Insert New Inventory</Text>
 
         </View>
     )
