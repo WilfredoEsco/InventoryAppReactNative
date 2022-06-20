@@ -29,7 +29,7 @@ return(
             tabBarIcon: ({focused}) => (
                 <View style={{alignItems: 'center', justifyContent: 'center',top: 10}}>
                     <Image 
-                    source = {require('../assets/adaptive-icon.png')}
+                    source = {require('../assets/searchIcon.png')}
                     resizeMode ='contain'
                     style ={{
                         width: 25,
@@ -46,7 +46,7 @@ return(
             tabBarIcon: ({focused}) => (
                 <View style={{alignItems: 'center', justifyContent: 'center',top: 10}}>
                     <Image 
-                    source = {require('../assets/favicon.png')}
+                    source = {require('../assets/insertIcon.png')}
                     resizeMode ='contain'
                     style ={{
                         width: 25,
@@ -63,7 +63,7 @@ return(
             tabBarIcon: ({focused}) => (
                 <View style={{alignItems: 'center', justifyContent: 'center',top: 10}}>
                     <Image 
-                    source = {require('../assets/splash.png')}
+                    source = {require('../assets/carIcon.png')}
                     resizeMode ='contain'
                     style ={{
                         width: 25,
