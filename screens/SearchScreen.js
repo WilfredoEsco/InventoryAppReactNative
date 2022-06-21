@@ -6,7 +6,7 @@ import Header from "../components/Header"
 const SearchScreen = ({navigation}) => {
     return(
         <View style = {StyleSheet.container}>
-            <Text>Search for parts:</Text>
+           
             <Searcher/>
           
         
@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#8fcbbc'
     },
+
 });
 
 

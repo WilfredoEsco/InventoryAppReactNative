@@ -25,7 +25,7 @@ return(
 
         }
     }}>
-        <Tab.Screen name = "Search" component={SearchScreen} options={{
+        <Tab.Screen name = "Search for Parts:"  component={SearchScreen} options={{
             tabBarIcon: ({focused}) => (
                 <View style={{alignItems: 'center', justifyContent: 'center',top: 10}}>
                     <Image 
@@ -41,7 +41,7 @@ return(
                 </View>
             )
         }} />
-        <Tab.Screen name = "Insert" component={InsertScreen}
+        <Tab.Screen name = "Insert Parts:" component={InsertScreen}
         options={{
             tabBarIcon: ({focused}) => (
                 <View style={{alignItems: 'center', justifyContent: 'center',top: 10}}>
@@ -58,7 +58,7 @@ return(
                 </View>
             )
         }}/>
-        <Tab.Screen name = "CarInfo" component={CarInfoScreen}
+        <Tab.Screen name = "Search Car Info" component={CarInfoScreen}
         options={{
             tabBarIcon: ({focused}) => (
                 <View style={{alignItems: 'center', justifyContent: 'center',top: 10}}>
@@ -89,6 +89,9 @@ const style = StyleSheet.create({
         shadowOpacity: 0.20,
         shadowRadius: 3.0,
         elevation: 5
+    },
+    headers:{
+        fontSize:25
     }
 });
 export default Tabs;
