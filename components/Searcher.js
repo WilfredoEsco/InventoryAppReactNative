@@ -1,14 +1,18 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text,TextInput, StyleSheet,Button } from "react-native";
 
 import { Picker } from "@react-native-picker/picker";
+
 
 function App() {
   const [part, setPart] = useState('Unknown');
 
   return (
     <View style = {styles.screen}>
-        <Text>Year: </Text>
+        <Text style ={styles.inputs}>Year: </Text>
+        <TextInput placeholder="Enter Year:"/>
+        <Text style ={styles.inputs}>Model:</Text>
+        <TextInput placeholder="Enter Model:"/>
       <Picker
         selectedValue={part}
         onValueChange={(value, index) => setPart(value)}
@@ -23,7 +27,12 @@ function App() {
         <Picker.Item label="Alternator" value="Alternator" />
       </Picker>
       <Text style={styles.text}>Your part: {part}</Text>
+      <Button
+        title="SEARCH" color ="#f194ff"
+        onPress={() => Alert.alert('Simple Button pressed')}
+      />
     </View>
+    
   );
 }
 
@@ -47,4 +56,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#666",
   },
+  inputs:{
+    fontSize: 20
+  }
+
 });
