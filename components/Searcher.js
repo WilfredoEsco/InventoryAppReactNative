@@ -13,10 +13,10 @@ function App() {
   return (
  
     <View style = {styles.screen}>
-        <Text style ={styles.inputs}>Year: </Text>
-        <TextInput placeholder="Enter Year:"/>
-        <Text style ={styles.inputs}>Model:</Text>
-        <TextInput placeholder="Enter Model:"/>
+        <Text style ={styles.text}>Year: </Text>
+        <TextInput placeholder="Enter Year:" style ={styles.inputs}/>
+        <Text style ={styles.text}>Model:</Text>
+        <TextInput placeholder="Enter Model:" style ={styles.inputs}/>
       <Picker
         selectedValue={part}
         onValueChange={(value, index) => setPart(value)}
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   screen: {
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: 'white',
+    backgroundColor: 'yellow',
     marginTop:15
   },
   text: {
@@ -58,11 +58,10 @@ const styles = StyleSheet.create({
     borderColor: "#666",
   },
   inputs:{
-    fontSize: 20
-  },
-  button:{
-    backgroundColor:'green',
-    borderRadius:8
+    fontSize: 20,
+    height:35,
+    width: 200,
+    backgroundColor:'white',
+    
   }
-
 });

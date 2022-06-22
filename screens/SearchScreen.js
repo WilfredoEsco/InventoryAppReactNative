@@ -9,11 +9,10 @@ const SearchScreen = ({navigation}) => {
         <View style = {StyleSheet.container}>
            
             <Searcher/>
-           
-          
-        
-
+            <Text style = {styles.resultText}>Results:</Text>
+            
         </View>
+
     )
 }
 
@@ -26,6 +25,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#8fcbbc'
     },
+    resultText:{
+      fontSize:30,
+      alignItems:'center',
+      align:"center"
+    }
 
 });
 
