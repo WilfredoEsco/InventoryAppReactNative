@@ -3,11 +3,13 @@ import {View, Text, Button, StyleSheet} from 'react-native';
 
 import Searcher from "../components/Searcher";
 import Header from "../components/Header"
+import CustomButton from "../components/customButton";
 const SearchScreen = ({navigation}) => {
     return(
         <View style = {StyleSheet.container}>
            
             <Searcher/>
+           
           
         
 

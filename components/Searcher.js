@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import { View, Text,TextInput, StyleSheet,Button } from "react-native";
 
 import { Picker } from "@react-native-picker/picker";
+import { TouchableOpacity } from "react-native-web";
+import CustomButton from "./customButton";
+
 
 
 function App() {
   const [part, setPart] = useState('Unknown');
 
   return (
+ 
     <View style = {styles.screen}>
         <Text style ={styles.inputs}>Year: </Text>
         <TextInput placeholder="Enter Year:"/>
@@ -26,12 +30,9 @@ function App() {
         <Picker.Item label="Starter" value="Starter" />
         <Picker.Item label="Alternator" value="Alternator" />
       </Picker>
-      <Text style={styles.text}>Your part: {part}</Text>
-      <Button
-        title="SEARCH" color ="#f194ff"
-        onPress={() => Alert.alert('Simple Button pressed')}
-      />
+      <CustomButton/>
     </View>
+
     
   );
 }
@@ -58,6 +59,10 @@ const styles = StyleSheet.create({
   },
   inputs:{
     fontSize: 20
+  },
+  button:{
+    backgroundColor:'green',
+    borderRadius:8
   }
 
 });
