@@ -47,14 +47,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: 'yellow',
-    marginTop:15
+    marginTop:1
   },
   text: {
     fontSize: 20,
   },
   picker: {
-    marginVertical: 5,
+    marginVertical: 1,
     width: 300,
+    height:150,
     padding: 10,
     borderWidth: 1,
     borderColor: "#666",
