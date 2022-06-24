@@ -9,14 +9,15 @@ import CustomButton from "./customButton";
 
 function App() {
   const [part, setPart] = useState('Unknown');
-
+  const [year, setYear] = useState();
+  const [model, setModel] = useState();
   return (
  
     <View style = {styles.screen}>
         <Text style ={styles.text}>Year: </Text>
-        <TextInput placeholder="Enter Year:" style ={styles.inputs}/>
+        <TextInput placeholder="Enter Year:" style ={styles.inputs} onChangeText={(val)=>setYear(val)}/>
         <Text style ={styles.text}>Model:</Text>
-        <TextInput placeholder="Enter Model:" style ={styles.inputs}/>
+        <TextInput placeholder="Enter Model:" style ={styles.inputs} onChangeText={(val)=> setModel(val)}/>
       <Picker
         selectedValue={part}
         onValueChange={(value, index) => setPart(value)}
@@ -30,6 +31,7 @@ function App() {
         <Picker.Item label="Starter" value="Starter" />
         <Picker.Item label="Alternator" value="Alternator" />
       </Picker>
+      <Text>Searching for : {year}, {model}, {part} </Text>
       <CustomButton/>
     </View>
 
@@ -62,6 +64,7 @@ const styles = StyleSheet.create({
     height:35,
     width: 200,
     backgroundColor:'white',
+    borderWidth:1
     
   }
 });
