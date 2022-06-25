@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, Button, StyleSheet} from 'react-native';
+import {View, Text, Button, StyleSheet,TouchableOpacity} from 'react-native';
 
 import Searcher from "../components/Searcher";
 import Header from "../components/Header"
@@ -9,8 +9,14 @@ const SearchScreen = ({navigation}) => {
         <View style = {StyleSheet.container}>
            
             <Searcher/>
-            <Text style = {styles.resultText}>Results:</Text>
-            
+            <Text style = {styles.resultText}>Results: </Text>
+            <TouchableOpacity>
+            <View style ={{...styles.button}}>
+                <Text style ={{...styles.buttonText}}>
+                   Delete
+                </Text>
+            </View>
+        </TouchableOpacity>
         </View>
 
     )
@@ -27,8 +33,27 @@ const styles = StyleSheet.create({
     },
     resultText:{
       fontSize:30,
-      alignItems:'center',
-      align:"center"
+      alignItems:'center', 
+      align: 'center',
+      marginLeft:150
+
+    },
+    button:{
+        backgroundColor:"red",
+        paddingVertical:15,
+        paddingHorizontal:10,
+        borderRadius:100,
+        width:150,
+        height:50,
+        align:"center",
+        
+    },
+    buttonText:{
+        color:"white",
+        fontSize:20,
+        textAlign:'center',
+        
+        
     }
 
 });

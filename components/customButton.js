@@ -4,8 +4,8 @@ import {View, Text,StyleSheet,TouchableOpacity} from "react-native";
 const CustomButton = props =>{
     return(
         <TouchableOpacity>
-            <View style = {{...stlyes.button, ...props.style}}>
-                <Text style ={{...stlyes.buttonText, ...props.textStyling}}>
+            <View style = {{...styles.button, ...props.style}}>
+                <Text style ={{...styles.buttonText, ...props.textStyling}}>
                    SEARCH
                 </Text>
             </View>
@@ -13,7 +13,7 @@ const CustomButton = props =>{
     )
 };
 
-const stlyes = StyleSheet.create({
+const styles = StyleSheet.create({
     button:{
         backgroundColor:"gray",
         paddingVertical:15,

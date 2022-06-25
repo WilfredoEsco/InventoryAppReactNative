@@ -31,9 +31,11 @@ function App() {
         <Picker.Item label="Starter" value="Starter" />
         <Picker.Item label="Alternator" value="Alternator" />
       </Picker>
-      <Text>Searching for : {year}, {model}, {part} </Text>
+   
       <CustomButton/>
+      <Text>Searching for... {year} {model} {part}. </Text>
     </View>
+
 
     
   );
@@ -55,8 +57,8 @@ const styles = StyleSheet.create({
   picker: {
     marginVertical: 1,
     width: 300,
-    height:150,
-    padding: 10,
+    height:160,
+    padding: 1,
     borderWidth: 1,
     borderColor: "#666",
   },
