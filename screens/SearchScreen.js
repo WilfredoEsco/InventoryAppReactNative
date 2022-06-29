@@ -4,12 +4,16 @@ import {View, Text, Button, StyleSheet,TouchableOpacity} from 'react-native';
 import Searcher from "../components/Searcher";
 import Header from "../components/Header"
 import CustomButton from "../components/customButton";
+import Datatable from "../components/Datatable";
+
 const SearchScreen = ({navigation}) => {
     return(
         <View style = {StyleSheet.container}>
            
             <Searcher/>
             <Text style = {styles.resultText}>Results: </Text>
+            <Datatable/>
+     
             <TouchableOpacity>
             <View style ={{...styles.button}}>
                 <Text style ={{...styles.buttonText}}>
@@ -46,6 +50,7 @@ const styles = StyleSheet.create({
         width:150,
         height:50,
         align:"center",
+        marginLeft:120
         
     },
     buttonText:{
