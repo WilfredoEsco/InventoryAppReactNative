@@ -15,7 +15,7 @@ const CustomButton = props =>{
 
 const styles = StyleSheet.create({
     button:{
-        backgroundColor:"gray",
+        backgroundColor:"green",
         paddingVertical:15,
         paddingHorizontal:10,
         borderRadius:100,

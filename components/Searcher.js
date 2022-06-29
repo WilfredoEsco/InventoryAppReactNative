@@ -33,7 +33,7 @@ function App() {
       </Picker>
    
       <CustomButton/>
-      <Text>Searching for... {year} {model} {part}. </Text>
+      <Text style={styles.text}>Searching for....{year} {model} {part}. </Text>
     </View>
 
 
@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
+    color:'red'
   },
   picker: {
     marginVertical: 1,
