@@ -8,7 +8,7 @@ import CustomButton from "./customButton";
 
 
 function App() {
-  const [part, setPart] = useState('Unknown');
+  const [part, setPart] = useState();
   const [year, setYear] = useState();
   const [model, setModel] = useState();
   return (

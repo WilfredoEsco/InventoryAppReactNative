@@ -9,7 +9,7 @@ export default function HomeHeader() {
 
             <TouchableOpacity>
                 <Image 
-                    source={{uri : 'https://4.bp.blogspot.com/-MlPqmlI4xiA/Te1sdov8b2I/AAAAAAAAAAY/ftAarMZDrc4/s1600/recycle-794950.jpg'}}
+                    source={require('../assets/InternationalUsedAutoPartsLogo1.png')}
                     style={styles.menu}
                 />
             </TouchableOpacity>
@@ -31,16 +31,16 @@ const styles = StyleSheet.create({
         shadowOffset: {height: 1, width: 2},
     },
     menu: {
-        height: 35,
-        width: 35,
+        height: 50,
+        width: 65,
         marginLeft: 15,
-        marginTop: 35,
+        marginTop: 30,
     },
     headerText: {
         color: 'white',
-        marginLeft: 20,
+        marginLeft: 10,
         marginTop: 40,
-        fontSize: 23, 
+        fontSize: 22, 
         fontWeight: '600',
     },
 }) 

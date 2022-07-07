@@ -1,15 +1,10 @@
 import * as React from 'react';
 import { DataTable } from 'react-native-paper';
+import { Pressable } from 'react-native';
 
-const optionsPerPage = [2, 3, 4];
+
 
 const Datatable = () => {
-  const [page, setPage] = React.useState(0);
-  const [itemsPerPage, setItemsPerPage] = React.useState(optionsPerPage[0]);
-
-  React.useEffect(() => {
-    setPage(0);
-  }, [itemsPerPage]);
 
   return (
     <DataTable>
@@ -20,14 +15,14 @@ const Datatable = () => {
         <DataTable.Title >Part</DataTable.Title>
         <DataTable.Title >Location</DataTable.Title>
       </DataTable.Header>
-
-      <DataTable.Row>
+      <DataTable.Row >
         <DataTable.Cell>420</DataTable.Cell>
         <DataTable.Cell >2008</DataTable.Cell>
         <DataTable.Cell >Silverado</DataTable.Cell>
         <DataTable.Cell >Starter</DataTable.Cell>
         <DataTable.Cell >D5-5</DataTable.Cell>
       </DataTable.Row>
+   
       <DataTable.Row>
         <DataTable.Cell>421</DataTable.Cell>
         <DataTable.Cell >2010</DataTable.Cell>
@@ -36,18 +31,16 @@ const Datatable = () => {
         <DataTable.Cell >D5-5</DataTable.Cell>
       </DataTable.Row>
 
+      <DataTable.Row>
+        <DataTable.Cell>401</DataTable.Cell>
+        <DataTable.Cell >2000</DataTable.Cell>
+        <DataTable.Cell >F150</DataTable.Cell>
+        <DataTable.Cell >Engine</DataTable.Cell>
+        <DataTable.Cell >E5-5</DataTable.Cell>
+      </DataTable.Row>
 
-      <DataTable.Pagination
-        page={page}
-        numberOfPages={3}
-        onPageChange={(page) => setPage(page)}
-        label="1-2 of 6"
-        optionsPerPage={optionsPerPage}
-        itemsPerPage={itemsPerPage}
-        setItemsPerPage={setItemsPerPage}
-        showFastPagination
-        optionsLabel={'Rows per page'}
-      />
+
+   
     </DataTable>
   );
 }
