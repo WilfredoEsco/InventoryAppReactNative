@@ -32,8 +32,8 @@ function App() {
         <Picker.Item label="Alternator" value="Alternator" />
       </Picker>
    
-      <CustomButton/>
-      <Text style={styles.text}>Searching for....{year} {model} {part}. </Text>
+      <CustomButton />
+      <Text style={styles.text}>Searching for: {year} {model} {part}. </Text>
     </View>
 
 
