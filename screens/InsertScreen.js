@@ -35,7 +35,7 @@ const InsertScreen = ({ navigation }) => {
             <Text>Enter any comments/notes</Text>
             <TextInput placeholder="Enter Note:" style={styles.notesBox} onChangeText={(val) => setNotes(val)} />
 
-            <TouchableOpacity>
+            <TouchableOpacity onClick ={addInventory}>
             <View style ={{...styles.button}}>
                 <Text style ={{...styles.buttonText}}>
                    INSERT
