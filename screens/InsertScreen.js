@@ -4,15 +4,16 @@ import { View, Text, TextInput, Button, StyleSheet,TouchableOpacity } from 'reac
 
 const InsertScreen = ({ navigation }) => {
 
-    const [stk, setStk] = useState();
-    const [partID, setPart] = useState();
+    const [stk_number, setStk] = useState();
+    const [partID, setPartID] = useState();
     const [shelf, setShelf] = useState();
     const [location, setLocation] = useState();
     const [notes, setNotes] = useState();
 
     const addInventory =() => {
+       
         Axios.post("35.239.193.136/5000/insert",{
-            stk:stk_number,
+            stk_number:stk_number,
             partID: partID,
             shelf: shelf,
             location: location,
@@ -25,8 +26,8 @@ const InsertScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Text>Enter STK Number: </Text>
-            <TextInput placeholder="Enter STK:" style={styles.inputBoxes} onChangeText={(val) => setYear(val)} />
-            <Text>Enter Part Name: </Text>
+            <TextInput placeholder="Enter STK:" style={styles.inputBoxes} onChangeText={(val) => setStk(val)} />
+            <Text>Enter Part Number: </Text>
             <TextInput placeholder="Enter partname:" style={styles.inputBoxes} onChangeText={(val) => setPartID(val)} />
             <Text>Enter Shelf Letter</Text>
             <TextInput placeholder="Enter Shelf:" style={styles.inputBoxes} onChangeText={(val) => setShelf(val)} />
@@ -35,13 +36,7 @@ const InsertScreen = ({ navigation }) => {
             <Text>Enter any comments/notes</Text>
             <TextInput placeholder="Enter Note:" style={styles.notesBox} onChangeText={(val) => setNotes(val)} />
 
-            <TouchableOpacity onClick ={addInventory}>
-            <View style ={{...styles.button}}>
-                <Text style ={{...styles.buttonText}}>
-                   INSERT
-                </Text>
-            </View>
-        </TouchableOpacity>
+       <Button onPress ={addInventory}  style={styles.button}  title ="Insert"/>
 
         
 
