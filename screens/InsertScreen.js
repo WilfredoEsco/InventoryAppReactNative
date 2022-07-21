@@ -2,6 +2,7 @@ import { Axios } from "axios";
 import React, { useState } from "react";
 import { View, Text, TextInput, Button, StyleSheet,TouchableOpacity } from 'react-native';
 
+
 const InsertScreen = ({ navigation }) => {
 
     const [stk_number, setStk] = useState();
@@ -11,8 +12,8 @@ const InsertScreen = ({ navigation }) => {
     const [notes, setNotes] = useState();
 
     const addInventory =() => {
-       
-        Axios.post("35.239.193.136/5000/insert",{
+       console.log(location);
+        Axios.post("http://35.239.193.136/5000/create",{
             stk_number:stk_number,
             partID: partID,
             shelf: shelf,
@@ -22,7 +23,7 @@ const InsertScreen = ({ navigation }) => {
         }).then(() =>{
             console.log("Success!")
         })
-    }
+    };
     return (
         <View style={styles.container}>
             <Text>Enter STK Number: </Text>
