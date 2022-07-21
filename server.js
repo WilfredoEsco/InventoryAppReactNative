@@ -1,7 +1,7 @@
 const express =  require("express");
 const app =express();
-const mysql = require('mysql');
-const cors = require('cors');
+const mysql = require("mysql");
+const cors = require("cors")
 
 
 app.use(cors());
@@ -21,6 +21,7 @@ app.post("/create",(req,res)=>{
     const partID = req.body.partID;
     const shelf = req.body.shelf;
     const location = req.body.location;
+    const notes = req.body.notes;
 
     db.query("INSERT INTO inventory(stk_number,partID,shelf,location,notes) VALUES(?,?,?,?.?)",(stk_number,part_id,shelf,location,notes),
     (err,result)=>{

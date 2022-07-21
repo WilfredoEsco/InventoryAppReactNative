@@ -21,7 +21,7 @@ const InsertScreen = ({ navigation }) => {
             notes: notes
 
         }).then(() =>{
-            console.log("Success!")
+            console.log("Success!");
         })
     };
     return (
