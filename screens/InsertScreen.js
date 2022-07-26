@@ -1,4 +1,4 @@
-import { Axios } from "axios";
+import * as Axios from 'axios';
 import React, { useState } from "react";
 import { View, Text, TextInput, Button, StyleSheet,TouchableOpacity } from 'react-native';
 
@@ -12,7 +12,7 @@ const InsertScreen = ({ navigation }) => {
     const [notes, setNotes] = useState();
 
     const addInventory =() => {
-       console.log(location);
+       console.log(notes);
         Axios.post("http://35.239.193.136/5000/create",{
             stk_number:stk_number,
             partID: partID,
@@ -37,7 +37,13 @@ const InsertScreen = ({ navigation }) => {
             <Text>Enter any comments/notes</Text>
             <TextInput placeholder="Enter Note:" style={styles.notesBox} onChangeText={(val) => setNotes(val)} />
 
-       <Button onPress ={addInventory}  style={styles.button}  title ="Insert"/>
+            <TouchableOpacity onPress={addInventory}>
+            <View style ={{...styles.button}}>
+                <Text style ={{...styles.buttonText}}>
+                   INSERT
+                </Text>
+            </View>
+        </TouchableOpacity>
 
         
 
@@ -69,7 +75,7 @@ const styles = StyleSheet.create({
         borderWidth: 1
     },
     button:{
-        backgroundColor:"gray",
+        backgroundColor:"green",
         paddingVertical:15,
         paddingHorizontal:10,
         borderRadius:100,
@@ -79,7 +85,7 @@ const styles = StyleSheet.create({
         
     },
     buttonText:{
-        color:"green",
+        color:"black",
         fontSize:20,
         textAlign:'center',
         
