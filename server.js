@@ -1,43 +1,34 @@
-const express =  require("express");
-const app =express();
-const mysql = require("mysql");
-const cors = require('cors');
+const mysql = require('mysql');
 
+// Database Connection for Production this code is for using when deployin to GAE(Google App Engine)
 
-app.use(cors());
-app.use(express.json());
+// let config = {
+//     user: process.env.SQL_USER,
+//     database: process.env.SQL_DATABASE,
+//     password: process.env.SQL_PASSWORD,
+// }
 
-const db = mysql.createConnection({
-    host:"35.239.193.136",
-    user:"root",
-    password:"IntAP0271!",
-    database:"internationalap",
-  
+// if (process.env.INSTANCE_CONNECTION_NAME && process.env.NODE_ENV === 'production') {
+//   config.socketPath = `/cloudsql/${process.env.INSTANCE_CONNECTION_NAME}`;
+// }
 
+// let connection = mysql.createConnection(config);
+
+// Database Connection for Development
+
+let connection = mysql.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  database: process.env.DB_DATABASE,
+  password: process.env.DB_PASS
 });
 
-app.post("/create",(req,res)=>{
-    const stk_number = req.body.stk_number;
-    const partID = req.body.partID;
-    const shelf = req.body.shelf;
-    const location = req.body.location;
-    const notes = req.body.notes;
+  connection.connect(function(err) {
+    if (err) {
+      console.error('Error connecting: ' + err.stack);
+      return;
+    }
+    console.log('Connected as thread id: ' + connection.threadId);
+  });
 
-    db.query("INSERT INTO inventory(stk_number,partID,shelf,location,notes) VALUES(?,?,?,?.?)",(stk_number,part_id,shelf,location,notes),
-    (err,result)=>{
-        if(err){
-            console.log(err)
-        }else{
-            res.send("Part Inserted!");
-        }
-    })
-});
-
-app.listen(5000,()=>
-{
-    console.log("Sever 5000");
-})
-
-
-
-
+  module.exports = connection;

@@ -1,4 +1,4 @@
-import * as Axios from 'axios';
+import * as axios from 'axios';
 import React, { useState } from "react";
 import { View, Text, TextInput, Button, StyleSheet,TouchableOpacity } from 'react-native';
 
@@ -11,18 +11,20 @@ const InsertScreen = ({ navigation }) => {
     const [location, setLocation] = useState();
     const [notes, setNotes] = useState();
 
+    const  url = 'http://35.239.193.136/data';
     const addInventory =() => {
-       console.log(notes);
-        Axios.post("http://35.239.193.136/5000/create",{
+        console.log(location);
+        axios.post(url,{
             stk_number:stk_number,
             partID: partID,
             shelf: shelf,
             location: location,
             notes: notes
 
-        }).then(() =>{
-            console.log("Success!");
-        })
+        }).then((response) =>{
+            console.log(response.data);
+        }).catch(err => 
+            console.log(err));
     };
     return (
         <View style={styles.container}>

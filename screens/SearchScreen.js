@@ -1,23 +1,34 @@
 import React from "react";
 import {View, Text, Button, StyleSheet,TouchableOpacity} from 'react-native';
+import { useState } from "react";
 
 import Searcher from "../components/Searcher";
 import Header from "../components/Header"
 import CustomButton from "../components/customButton";
 import Datatable from "../components/Datatable";
+import Axios from "axios";
+
 
 const SearchScreen = ({navigation}) => {
+
+    const [Inventory, setInventory] = useState([]);
+    const getinventory = () => {
+        Axios.get('http://35.239.193.136/data').then((response) => {
+          setInventory(response.data);
+        });
+      };
+
     return(
         <View style = {StyleSheet.container}>
            
             <Searcher/>
             <Text style = {styles.resultText}>Results: </Text>
-            <Datatable/>
+            
      
-            <TouchableOpacity>
+            <TouchableOpacity onPress ={getinventory}>
             <View style ={{...styles.button}}>
                 <Text style ={{...styles.buttonText}}>
-                   Delete
+                   Delete 
                 </Text>
             </View>
         </TouchableOpacity>
