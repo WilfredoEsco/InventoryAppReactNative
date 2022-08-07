@@ -2,15 +2,23 @@ import React, { useState } from "react";
 import { View, Text,TextInput, StyleSheet,Button } from "react-native";
 
 import { Picker } from "@react-native-picker/picker";
-import { TouchableOpacity } from "react-native-web";
-import CustomButton from "./customButton";
-
-
+import { TouchableOpacity } from "react-native";
+//import CustomButton from "./customButton";
 
 function App() {
+
   const [part, setPart] = useState();
   const [year, setYear] = useState();
   const [model, setModel] = useState();
+
+  // Function to make api call onPress
+  const PartSearch = ( year, model, part ) => {
+    // Need input validation to make sure correct values are inputted and/or selected
+    console.log(year);
+    console.log(model);
+    console.log(part);
+    // Once verified use AXIOS or FETCH to make the call to retrieve from the database using the data
+  }
   return (
  
     <View style = {styles.screen}>
@@ -18,7 +26,7 @@ function App() {
         <TextInput placeholder="Enter Year:" style ={styles.inputs} onChangeText={(val)=>setYear(val)}/>
         <Text style ={styles.text}>Model:</Text>
         <TextInput placeholder="Enter Model:" style ={styles.inputs} onChangeText={(val)=> setModel(val)}/>
-      <Picker
+      <Picker 
         selectedValue={part}
         onValueChange={(value, index) => setPart(value)}
         mode="dropdown" // Android only
@@ -32,7 +40,17 @@ function App() {
         <Picker.Item label="Alternator" value="Alternator" />
       </Picker>
    
-      <CustomButton />
+      {/*<CustomButton />*/}
+      {/* - Touchable Opacity - Will make a call to search for a part - */}
+      {/* CODE FOR BUTTON PRESS - onPress={() => {PartSearch( 3 FIELDS OF DATA NEEDED )}} */}
+      <TouchableOpacity onPress={() => {PartSearch( {year}, {model}, {part} )}}>
+        <View style = {styles.button}>
+          <Text style ={styles.buttonText}>
+            SEARCH
+          </Text>
+        </View>
+      </TouchableOpacity>
+
       <Text style={styles.text}>Searching for: {year} {model} {part}. </Text>
     </View>
 
@@ -56,10 +74,11 @@ const styles = StyleSheet.create({
     color:'red'
   },
   picker: {
-    marginVertical: 1,
+    margin: 5,
+    //marginVertical: 1,
     width: 300,
-    height:160,
-    padding: 1,
+    height:210,
+    //padding: 1,
     borderWidth: 1,
     borderColor: "#666",
   },
@@ -69,6 +88,19 @@ const styles = StyleSheet.create({
     width: 200,
     backgroundColor:'white',
     borderWidth:1
-    
-  }
+  },
+  button:{
+    backgroundColor:"green",
+    paddingVertical:15,
+    paddingHorizontal:10,
+    borderRadius:100,
+    width:150,
+    height:50,
+    align:"center",
+  },
+  buttonText:{
+    color:"white",
+    fontSize:20,
+    textAlign:'center',
+  },
 });
