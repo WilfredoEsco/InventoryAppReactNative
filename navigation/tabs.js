@@ -34,10 +34,11 @@ return(
                     style ={{
                         width: 25,
                         height:25,
-                        tintColor: focused ? '#e32f45' : '#748c94'
+                        tintColor: focused ? '#e32f45' : '#748c94',
+                        marginBottom: 10
                     }}
                     />
-                    <Text style ={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}>Search</Text>
+                    {/*<Text style ={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}>Search</Text>*/}
                 </View>
             )
         }} />
@@ -51,10 +52,11 @@ return(
                     style ={{
                         width: 25,
                         height:25,
-                        tintColor: focused ? '#e32f45' : '#748c94'
+                        tintColor: focused ? '#e32f45' : '#748c94',
+                        marginBottom: 10
                     }}
                     />
-                    <Text style ={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}>Insert</Text>
+                    {/*<Text style ={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}>Insert</Text>*/}
                 </View>
             )
         }}/>
@@ -68,10 +70,11 @@ return(
                     style ={{
                         width: 25,
                         height:25,
-                        tintColor: focused ? '#e32f45' : '#748c94'
+                        tintColor: focused ? '#e32f45' : '#748c94',
+                        marginBottom: 10
                     }}
                     />
-                    <Text style ={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}>CarInfo</Text>
+                    {/*<Text style ={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}>CarInfo</Text>*/}
                 </View>
             )
         }}/>
